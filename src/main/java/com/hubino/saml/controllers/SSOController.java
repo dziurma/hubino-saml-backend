@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.saml.metadata.MetadataManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,6 +31,7 @@ public class SSOController {
     private MetadataManager metadata;
 
     @GetMapping("/discovery")
+    @CrossOrigin
     public ResponseEntity<Object> idpSelection(HttpServletRequest request, Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null)
