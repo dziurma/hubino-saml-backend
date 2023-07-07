@@ -71,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
     @Value("${service.provider.entity.id}")
     private String serviceProviderEntityId;
 
-    @Value("${idp.metedata.url}")
+    @Value("${idp.metadata.url}")
     private String ipdMetaDataUrl;
 
     @Value("${saml.keystore.password}")
@@ -238,7 +238,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
 
     // IDP Metadata configuration - paths to metadata of IDPs in circle of trust
     // is here
-    // Do no forget to call iniitalize method on providers
+    // Do not forget to call initialize method on providers
     @Bean
     @Qualifier("metadata")
     public CachingMetadataManager metadata() throws MetadataProviderException {
@@ -398,7 +398,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
      * Define the security filter chain in order to support SSO Auth by using SAML 2.0
      *
      * @return Filter chain proxy
-     * @throws Exception
      */
     @Bean
     public FilterChainProxy samlFilter() throws Exception {
@@ -425,7 +424,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
      * It represents a bean definition with the aim allow wiring from
      * other classes performing the Inversion of Control (IoC).
      *
-     * @throws Exception
      */
     @Bean
     @Override
@@ -437,7 +435,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
      * Defines the web based security configuration.
      *
      * @param http It allows configuring web based security for specific http requests.
-     * @throws Exception
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {

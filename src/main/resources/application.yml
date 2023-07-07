@@ -14,7 +14,7 @@ logging:
 service.provider.entity.id:
   'dummybot-saml'
 
-idp.metedata.url:
+idp.metadata.url:
   'https://login.microsoftonline.com/9f93b2c4-bcb7-425f-a7fb-7f098055b6cb/federationmetadata/2007-06/federationmetadata.xml?appid=f1c84f3c-810b-4b03-95bb-98b5a6c459a5'
 
 # you can update credentials if you want, I recommend you to keep as it is for demo purpose
